@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../styles/header.css";
-import logo from "../../assets/img/dumble.png";
+import logoImg from "../../assets/img/extended.png";
 const Header = () => {
   const nav__links = [
     {
@@ -21,19 +21,19 @@ const Header = () => {
     }
   ]
   return (
-    <header>
+    <header className='header'>
       <div className="container">
         <div className="nav__wrapper">
           {/** ========= LOGO ========= */}
           <div className="logo">
             <div className="logo__img">
-                <img src={logo} alt=''/>
+                <img src={logoImg} alt=''/>
                 <h2>FitBody</h2>
             </div>
           </div>
           {/** ========= LOGO End ========= */}
 
-          {/** ================== Navigation Menu =================== */}
+          {/** ================== Navigation Menu Left =================== */}
           <div className="navigation">
               <ul className="menu">
                   {
@@ -43,6 +43,16 @@ const Header = () => {
                   }
               </ul>
           </div>
+          {/** ================== Navigation Menu Left End =================== */}
+
+          {/** ================== Navigation Menu Right =================== */}
+          <div className="nav__right">
+            <button className='register_btn'>Register</button>
+            <span className='mobile__menu'>
+                <i class="ri-menu-line"></i>
+            </span>
+          </div>
+          {/** ================== Navigation Menu Right End =================== */}
 
         </div>
       </div>
