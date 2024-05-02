@@ -4,6 +4,8 @@ import Exercise from './components/UI/Exercise';
 import Hero from './components/UI/Hero';
 import Pricing from './components/UI/Pricing';
 import Start from './components/UI/Start';
+import Testimonials from './components/UI/Testimonials';
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <Exercise/>
       <Start/>
       <Pricing/>
+      <Testimonials/>
     </>
   );
 }

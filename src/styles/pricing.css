@@ -15,6 +15,7 @@
     display: flex;
     text-align: center;
     justify-content: space-between;
+    column-gap: 2rem;
 }
 .pricing__item{
     box-shadow: rgba(0,0,0,0.15) 0px 5px 15px 0px;
@@ -55,7 +56,31 @@
     text-align: center;
 }
 .services button{
+    align-items: center;
     text-align: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+}
+
+.pricing__item_02 .pricing__card-top{
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 5px 5px 0px 0px;
+}
+.pricing__item_02 .pricing__card-top h2{
+    color: #fff;
+    font-weight: 500;
+}
+.pricing__item_02 .pricing__card-top h2 span{
+    color: rgba(255,255,255,0.788);
+    font-weight: 700;
+}
+.pricing__item_02 .services ul li span a{
+    color: var(--primary-color);
+}
+.register__btn{
+    text-align: center;
+    align-items: center;
 }
