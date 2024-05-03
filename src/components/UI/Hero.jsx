@@ -1,6 +1,5 @@
 import React from 'react'
 import heroImg from '../../assets/img/gym-02.png'
-import dumbleIcon from '../../assets/img/extended.png';
 import '../../styles/hero.css';
 
 const Hero = () => {

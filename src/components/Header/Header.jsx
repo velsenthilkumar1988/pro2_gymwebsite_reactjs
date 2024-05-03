@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import "../../styles/header.css";
 import logoImg from "../../assets/img/extended.png";
 const Header = () => {
+  const headerRef = useRef(null)
+  const menuRef = useRef(null)
+  const stickyHeaderFunc = ()=>{
+    window.addEventListener('scroll', ()=>{
+      if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+        headerRef.current.classlist.add('sticky__header')
+      }else{
+        headerRef.current.classlist.remove('sticky__header')
+      }
+    })
+  }
+  useEffect(()=>{
+    stickyHeaderFunc()
+    return window.removeEventListener('scroll', stickyHeaderFunc)
+  },[]);
+
+  const handleClick = e=> {
+    e.preventDefault()
+    const targetAtt = e.target.getAttribute('href');//e.targetAttribute("href");
+    const location = document.querySelector(targetAtt).offsetTop;
+
+    window.scrollTo({
+      top : location - 80,
+      left : 0,
+    })
+  }
+  
+  const toggleMenu = ()=> menuRef.current.classList.toggle('show__menu')
+  
   const nav__links = [
     {
       path: '#',
@@ -19,9 +48,9 @@ const Header = () => {
       path: '#',
       display : 'Princing'
     }
-  ]
+  ];
   return (
-    <header className='header'>
+    <header className='header' ref={headerRef}>
       <div className="container">
         <div className="nav__wrapper">
           {/** ========= LOGO ========= */}
@@ -34,11 +63,11 @@ const Header = () => {
           {/** ========= LOGO End ========= */}
 
           {/** ================== Navigation Menu Left =================== */}
-          <div className="navigation">
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <ul className="menu">
                   {
                     nav__links.map(item =>(
-                      <li className='nav_item'><a href={item.path}>{item.display}</a></li>
+                      <li className='nav_item'><a onClick={handleClick} href={item.path}>{item.display}</a></li>
                     ))
                   }
               </ul>
