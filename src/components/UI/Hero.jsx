@@ -4,16 +4,16 @@ import '../../styles/hero.css';
 
 const Hero = () => {
   return (
-    <section>
+    <section id='home'>
       <div className="container">
-        <div className="hero__wrapper">
+        <div className="hero__wrapper md:flex-row">
           {/** Hero Content Start */}
           <div className="hero__content">
-            <h2 className="section__title">
+            <h2 className="section__title" data-aos="fade-up" data-aos-duration="1500">
               Exercise is the key to a{" "}
               <span className="highlights"> Healthy</span> LifeStyle
             </h2>
-            <p>
+            <p  data-aos="fade-up" data-aos-delay="100" data-aos-duration="1800">
               The page will automatically reload if you make changes to the<br/>
               code. You will see the build errors and lint warnings.
             </p>

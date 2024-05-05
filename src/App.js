@@ -17,11 +17,13 @@ function App() {
   return (
     <>
       <Header/>
-      <Hero/>
-      <Exercise/>
-      <Start/>
-      <Pricing/>
-      <Testimonials/>
+      <main>
+        <Hero/>
+        <Exercise/>
+        <Start/>
+        <Pricing/>
+        <Testimonials/>
+      </main>
       <Footer/>
     </>
   );

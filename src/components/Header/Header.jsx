@@ -7,16 +7,16 @@ const Header = () => {
   const stickyHeaderFunc = ()=>{
     window.addEventListener('scroll', ()=>{
       if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
-        headerRef.current.classlist.add('sticky__header')
+        headerRef.current.classList.add('sticky__header')
       }else{
-        headerRef.current.classlist.remove('sticky__header')
+        headerRef.current.classList.remove('sticky__header')
       }
-    })
+    });
   }
   useEffect(()=>{
     stickyHeaderFunc()
     return window.removeEventListener('scroll', stickyHeaderFunc)
-  },[]);
+  },[])
 
   const handleClick = e=> {
     e.preventDefault()
@@ -33,24 +33,24 @@ const Header = () => {
   
   const nav__links = [
     {
-      path: '#',
+      path: '#home',
       display : 'Home'
     },
     {
-      path: '#',
+      path: '#schedule',
       display : 'Schedule'
     },
     {
-      path: '#',
+      path: '#classes',
       display : 'Classes'
     },
     {
-      path: '#',
-      display : 'Princing'
+      path: '#pricing',
+      display : 'Pricing'
     }
   ];
   return (
-    <header className='header' ref={headerRef}>
+    <header ref={headerRef} className='header'>
       <div className="container">
         <div className="nav__wrapper">
           {/** ========= LOGO ========= */}
@@ -77,7 +77,7 @@ const Header = () => {
           {/** ================== Navigation Menu Right =================== */}
           <div className="nav__right">
             <button className='register_btn'>Register</button>
-            <span className='mobile__menu'>
+            <span onClick={toggleMenu} className='mobile__menu'>
                 <i class="ri-menu-line"></i>
             </span>
           </div>

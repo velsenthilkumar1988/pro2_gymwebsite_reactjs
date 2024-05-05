@@ -4,7 +4,7 @@ import trainerImg from '../../assets/img/trainer.png';
 
 const Start = () => {
   return (
-    <section>
+    <section id='classes'>
         <div className="container">
             <div className="start__wrapper">
                 <div className="start__img">

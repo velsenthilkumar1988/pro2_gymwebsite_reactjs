@@ -2,7 +2,7 @@ import React from 'react'
 import "../../styles/pricing.css";
 const Pricing = () => {
   return (
-    <section>
+    <section id="pricing">
         <div className="container">
             <div className="pricing__top">
                 <h2 className="section__title">Gym <span className='highlights'> Pricing</span> Plan</h2>
